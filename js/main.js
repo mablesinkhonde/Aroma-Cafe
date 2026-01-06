@@ -53,3 +53,24 @@ document.querySelectorAll(".nav-link").forEach((link) => {
     link.removeAttribute("aria-current")
   }
 })
+// About Page Image Slider
+const images = [
+    "image1.jpg",
+    "image2.jpg",
+    "image3.jpg",
+    "image4.jpg"
+];
+
+let currentIndex = 0;
+const slider = document.getElementById("aboutSlider");
+
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % images.length;
+    slider.style.opacity = 0;
+
+    setTimeout(() => {
+        slider.src = images[currentIndex];
+        slider.style.opacity = 1;
+    }, 400);
+}, 5000); // changes image every 3 seconds
+
